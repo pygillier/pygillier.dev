@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
 body {
 	border: 8px solid black;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/** Navbar **/
+div.navbar-menu .navbar-item {
+	font-weight: bold;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom: 2px solid transparent;
+	line-height: 1em;
+}
+div.navbar-menu .navbar-item:hover, div.navbar-menu .navbar-item .active {
+	background-color: unset;
+	border-bottom: 2px solid red;
 }

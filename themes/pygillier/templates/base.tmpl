@@ -13,25 +13,9 @@
 <body>
     <a href="#content" class="is-sr-only">{{ messages("Skip to main content") }}</a>
     {{ header.html_header() }}
-    <section class="section">
-        <div class="container">
-            <h1 class="title">
-                Hello World
-            </h1>
-            <p class="subtitle">
-                My first website with <strong>Bulma</strong>!
-            </p>
-        </div>
-    </section>
-    
-    <div id="container">
-        <main id="content">{{ initials }}
-            {% block content %}{% endblock %}
-        }
-        }
-        </main>
-        {{ footer.html_footer() }}
-    </div>
+
+    {% block content %}{% endblock %}
+    {{ footer.html_footer() }}
     {{ base.late_load_js() }}
     {% if date_fanciness != 0 %}
     <!-- fancy dates -->

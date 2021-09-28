@@ -76,9 +76,8 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/archive.html", "Archives"),
-        ("/categories/", "Étiquettes"),
-        ("/rss.xml", "Flux RSS"),
+        ("/archive.html", "Projects"),
+        ("https://pygillier.me", "Blog"),
     ),
 }
 
@@ -155,10 +154,10 @@ THEME_CONFIG = {
 
 POSTS = ()
 PAGES = (
-    ("pages/*.rst", "pages", "page.tmpl"),
-    ("pages/*.md", "pages", "page.tmpl"),
-    ("pages/*.txt", "pages", "page.tmpl"),
-    ("pages/*.html", "pages", "page.tmpl"),
+    ("pages/*.rst", "projects", "page.tmpl"),
+    ("pages/*.md", "projects", "page.tmpl"),
+    ("pages/*.txt", "projects", "page.tmpl"),
+    ("pages/*.html", "projects", "page.tmpl"),
 )
 
 
@@ -441,7 +440,7 @@ HIDDEN_CATEGORIES = []
 
 # If ENABLE_AUTHOR_PAGES is set to True and there is more than one
 # author, author pages are generated.
-# ENABLE_AUTHOR_PAGES = True
+ENABLE_AUTHOR_PAGES = False
 
 # Path to author pages. Final locations are:
 # output / TRANSLATION[lang] / AUTHOR_PATH / index.html (list of authors)
@@ -855,14 +854,14 @@ FEED_LINKS_APPEND_QUERY = False
 
 # A HTML fragment describing the license, for the sidebar.
 # (translatable)
-LICENSE = ""
+# LICENSE = ""
 # I recommend using the Creative Commons' wizard:
 # https://creativecommons.org/choose/
-# LICENSE = """
-# <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-# <img alt="Creative Commons License BY-NC-SA"
-# style="border-width:0; margin-bottom:12px;"
-# src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>"""
+LICENSE = """
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>"""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
@@ -914,7 +913,7 @@ COMMENT_SYSTEM_ID = ""
 # WARNING: if a page would conflict with the index file (usually
 #          caused by setting slug to `index`), the PAGE_INDEX
 #          will not be generated for that directory.
-# PAGE_INDEX = False
+PAGE_INDEX = True
 # Enable comments on pages (i.e. not posts)?
 # COMMENTS_IN_PAGES = False
 # Enable comments on picture gallery pages?
@@ -1055,7 +1054,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 
 # By default, Nikola generates RSS files for the website and for tags, and
 # links to it.  Set this to False to disable everything RSS-related.
-# GENERATE_RSS = True
+GENERATE_RSS = False
 
 # By default, Nikola does not generates Atom files for indexes and links to
 # them. Generate Atom for tags by setting TAG_PAGES_ARE_INDEXES to True.

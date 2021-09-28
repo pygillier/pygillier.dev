@@ -1,0 +1,53 @@
+{#  -*- coding: utf-8 -*- #}
+{% import 'index_helper.tmpl' as helper with context %}
+{% import 'math_helper.tmpl' as math with context %}
+{% import 'comments_helper.tmpl' as comments with context %}
+{% import 'pagination_helper.tmpl' as pagination with context %}
+{% import 'feeds_translations_helper.tmpl' as feeds_translations with context %}
+{% extends 'base.tmpl' %}
+
+{% block extra_head %}
+    {{ super() }}
+    {% if posts and (permalink == '/' or permalink == '/' + index_file) %}
+        <link rel="prefetch" href="{{ posts[0].permalink() }}" type="text/html">
+    {% endif %}
+    {{ math.math_styles_ifposts(posts) }}
+{% endblock %}
+
+{% block content %}
+{% block content_header %}
+    {{ feeds_translations.translation_link(kind) }}
+{% endblock %}
+{% if 'main_index' in pagekind %}
+    {{ front_index_header }}
+{% endif %}
+<section class="section">
+    <div class="container is-max-desktop mb-6">
+        <h1 class="title has-text-left">
+            Hello my name is Pierre-Yves. I'm a devops/cloud engineer located in Angers, France.
+        </h1>
+    </div>
+    <div class="container is-max-widescreen mt-2">
+        <figure class="image is-2by1">
+            <img src="/assets/images/tbilissi.jpg">
+        </figure>
+    </div>
+</section>
+<section class="section">
+    <article class="container is-max-desktop mb-3">
+        <h2 class="is-size-4 mb-3">I am&hellip;</h2>
+        <p class="has-text-justified">Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>. Aliquam vulputate consectetur pellentesque. Proin id accumsan quam. Mauris et venenatis augue, id venenatis sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum semper facilisis dapibus. Pellentesque tincidunt sapien nunc, ac consectetur dui mollis vel. Aliquam a ligula turpis. Pellentesque fringilla, ipsum eleifend pharetra dictum, dolor quam condimentum mauris, vitae dictum nulla mi eget mi. Proin eros diam, accumsan non faucibus ut, bibendum sed nisl. Pellentesque auctor nulla non orci feugiat, sodales facilisis quam pellentesque. In dictum aliquet purus sed lacinia. </p>
+    </article>
+    <article class="container is-max-desktop mb-3">
+        <h2 class="is-size-4 mb-3">I do&hellip;</h2>
+        <p class="has-text-justified">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate consectetur pellentesque. Proin id accumsan quam. Mauris et venenatis augue, id venenatis sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum semper facilisis dapibus. Pellentesque tincidunt sapien nunc, ac consectetur dui mollis vel. Aliquam a ligula turpis. Pellentesque fringilla, ipsum eleifend pharetra dictum, dolor quam condimentum mauris, vitae dictum nulla mi eget mi. Proin eros diam, accumsan non faucibus ut, bibendum sed nisl. Pellentesque auctor nulla non orci feugiat, sodales facilisis quam pellentesque. In dictum aliquet purus sed lacinia. </p>
+    </article>
+    <article class="container is-max-desktop">
+        <h2 class="is-size-4 mb-3">Stay in touch ?</h2>
+        <p class="has-text-justified">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate consectetur pellentesque. Proin id accumsan quam. Mauris et venenatis augue, id venenatis sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum semper facilisis dapibus. Pellentesque tincidunt sapien nunc, ac consectetur dui mollis vel. Aliquam a ligula turpis. Pellentesque fringilla, ipsum eleifend pharetra dictum, dolor quam condimentum mauris, vitae dictum nulla mi eget mi. Proin eros diam, accumsan non faucibus ut, bibendum sed nisl. Pellentesque auctor nulla non orci feugiat, sodales facilisis quam pellentesque. In dictum aliquet purus sed lacinia. </p>
+    </article>
+</section>
+{{ helper.html_pager() }}
+{{ comments.comment_link_script() }}
+{{ math.math_scripts_ifposts(posts) }}
+{% endblock %}
