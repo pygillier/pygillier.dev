@@ -17,3 +17,8 @@ div.navbar-menu .navbar-item:hover, div.navbar-menu .navbar-item .active {
 	background-color: unset;
 	border-bottom: 2px solid red;
 }
+
+/** Hero **/
+.separator {
+	 border-bottom: 1px solid #f2f2f2;
+}
