@@ -76,7 +76,7 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/archive.html", "Projects"),
+        ("/projects/", "Projects"),
         ("https://pygillier.me", "Blog"),
     ),
 }
@@ -154,11 +154,15 @@ THEME_CONFIG = {
 
 POSTS = ()
 PAGES = (
-    ("pages/*.rst", "projects", "page.tmpl"),
-    ("pages/*.md", "projects", "page.tmpl"),
-    ("pages/*.txt", "projects", "page.tmpl"),
-    ("pages/*.html", "projects", "page.tmpl"),
+    ("pages/*.rst", "pages", "page.tmpl"),
+    ("pages/*.md", "pages", "page.tmpl"),
+    ("pages/*.txt", "pages", "page.tmpl"),
+    ("pages/*.html", "pages", "page.tmpl"),
+    ("projects/*.md", "projects", "project.tmpl"),
+    ("projects/*.rst", "projects", "project.tmpl"),
 )
+
+PROJECT_PATH = 'projects'
 
 
 # Below this point, everything is optional
@@ -913,7 +917,7 @@ COMMENT_SYSTEM_ID = ""
 # WARNING: if a page would conflict with the index file (usually
 #          caused by setting slug to `index`), the PAGE_INDEX
 #          will not be generated for that directory.
-PAGE_INDEX = True
+# PAGE_INDEX = True
 # Enable comments on pages (i.e. not posts)?
 # COMMENTS_IN_PAGES = False
 # Enable comments on picture gallery pages?
