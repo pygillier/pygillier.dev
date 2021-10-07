@@ -10,6 +10,7 @@
 .. description: Carbon-friendly travel search engine
 .. type: text
 .. cover: bonvoyage.png
+.. license: MIT
 -->
 
 Write your page here.
