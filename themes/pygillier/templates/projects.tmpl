@@ -16,20 +16,21 @@
 <section class="section">
   <div class="container is-max-desktop">
     {% for p in projects %}
-    <article>
-      <figure class="image is-3by1">
-  <img src="https://bulma.io/images/placeholders/256x256.png">
-</figure>
-      <header>{{ p.title() }}</header>
+    <article class="project">
+        <figure class="image is-3by1">
+          
+          <img src="/images/{{ p.meta('cover') }}">
+          <div class="overlay">
+            <a class="text" href="{{ p.permalink() }}">View project</a>
+          </div>
+        </figure>
+      <header class="my-2 is-size-5">
+        <h2><a href="{{ p.permalink() }}">{{ p.title() }}</a> <span>/ {{ p.meta('role')}} / {{ p.meta('language')}}</span></h2>
+      </header>
+      <p>{{ p.meta('description')}}</p>
+      <footer>{{ project.devstatus(p.meta('devstatus')) }}</footer>
     </article>
     {% endfor %}
   </div>
 </section>
-<h2>All projects</h2>
-
-    <ul class="project-list">
-    {% for p in projects %}
-        <li class="project project-sort-{{ p.meta('sort') }}"><a href="{{ p.permalink() }}">{{ p.title() }}</a> {{ project.devstatus(p.meta('devstatus')) }}</a></li>
-    {% endfor %}
-    </ul>
 {% endblock %}
