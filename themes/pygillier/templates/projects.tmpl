@@ -16,7 +16,7 @@
 <section class="section">
   <div class="container is-max-desktop">
     {% for p in projects %}
-    <article class="project">
+    <article class="project my-3">
         <figure class="image is-3by1">
           
           <img src="/images/{{ p.meta('cover') }}">
@@ -30,6 +30,7 @@
       <p>{{ p.meta('description')}}</p>
       <footer>{{ project.devstatus(p.meta('devstatus')) }}</footer>
     </article>
+    <hr class="separator"/>
     {% endfor %}
   </div>
 </section>
