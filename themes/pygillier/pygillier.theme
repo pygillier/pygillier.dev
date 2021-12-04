@@ -1,0 +1,7 @@
+[Theme]
+engine = jinja
+parent = base-jinja
+author = Pierre-Yves Gillier
+author_url = http://pygillier.dev/
+based_on = Ben Adam blog <https://benadam.me/>
+license = MIT

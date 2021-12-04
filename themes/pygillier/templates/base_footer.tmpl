@@ -1,0 +1,13 @@
+{#  -*- coding: utf-8 -*- #}
+
+{% macro html_footer() %}
+{% if content_footer %}
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      {{ content_footer }}
+    </p>
+  </div>
+</footer>
+{% endif %}
+{% endmacro %}

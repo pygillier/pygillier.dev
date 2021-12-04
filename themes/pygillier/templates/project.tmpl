@@ -1,0 +1,40 @@
+{#  -*- coding: utf-8 -*- #}
+{% extends 'story.tmpl' %}
+{% import 'project_helper.tmpl' as project with context %}
+{% block content %}
+<section class="section">
+  <header class="container is-max-desktop">
+    <h1 class="title has-text-left pb-6">
+      {{ title }}
+    </h1>
+    <p class="subtitle has-text-left is-size-4 pb-4">
+      {{ post.meta('role')}} / {{ post.meta('language')}}
+    </p>
+  <p>
+    {{ project.devstatus(post.meta('devstatus')) }} 
+    {% if post.meta('license') %}
+    &middot; {{ post.meta('license') }} license
+    {% endif %}
+    {% if post.meta('link') %}
+    &middot; <a href="{{ post.meta('link') }}" class="btn btn-lg btn-primary"><i class="fa fa-link"></i> Website</a>
+    {% endif %}
+    {% if post.meta('github') %}
+    &middot; <a href="{{ post.meta('github') }}" class="btn btn-lg btn-info"><i class="fab fa-github"></i> GitHub</a>
+    {% endif %}
+  </p>
+  </header>
+  <hr class="separator"/>
+  <article class="container is-max-desktop">
+    <h2 class="is-size-4 pb-2">In a nutshell&hellip;</h2>
+    <p>{{ post.meta('description') }}</p>
+    <figure class="image is-3by1 my-4">
+      <img src="/images/{{ post.meta('cover') }}">
+    </figure>
+    <p>{{ post.text(lang) }}</p>
+  </article>
+  <hr class="separator"/>
+  <div class="has-text-centered">
+    <a href="#">All projects</a>
+  </div>
+</section>
+{% endblock %}
